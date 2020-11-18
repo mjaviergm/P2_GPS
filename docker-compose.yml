@@ -21,7 +21,7 @@ services:
     depends_on:
         - "mongo"
     deploy:
-    replicas:
+    replicas: 1
         resources:
             limits:
                 cpus: "0.3"
