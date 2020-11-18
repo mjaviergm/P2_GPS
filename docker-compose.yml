@@ -21,15 +21,15 @@ services:
     depends_on:
         - "mongo"
     deploy:
-    replicas: 1
+        replicas: 1
         resources:
             limits:
-                cpus: "0.3"
-                memory: 500M
-            restart_policy:
-               condition: on-failure
-        ports:
-          - "8080:8080"
+              cpus: "0.3"
+              memory: 500M
+        restart_policy:
+          condition: on-failure
+    ports:
+     - "8080:8080"
  web:
     image: marcojavier/p2_gps:db
     deploy:
