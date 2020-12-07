@@ -15,7 +15,7 @@ services:
         - "28017:28017"
         - "27017:27017"
     volumes:
-        - "db-data:/data/db" # para dar persistencia a la sesion
+        - "db-data:/data" # para dar persistencia a la sesion
  order:
     image: marcojavier/p2_gps:order
     depends_on:
@@ -31,7 +31,7 @@ services:
     ports:
      - "8080:8080"
  web:
-    image: marcojavier/p2_gps:db
+    image: marcojavier/p2_gps:web
     deploy:
         replicas: 1
         resources:
